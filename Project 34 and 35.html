@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project 34 and 35</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+            body {
+                text-align: center;
+                background-color: pink;
+                color: purple;
+            }
+            button {
+                margin:5px;
+            }
+        </style> 
+    </head>
+    <body>
+         <legend>Transaction</legend>
+        <label for="transaction-amount">Enter your Transaction Amount</label>
+        <input type="number" id="number"/><br>
+        <button type="button" class="btn btn-primary" onclick="credit()">Credit</button>
+        <button type="button" class="btn btn-primary" onclick="debit()">Debit</button>
+        <p id="result"></p>
+        <p id="balance">Your account balance is: 0 PKR</p>
+        <script>
+            var account_balance = 0;
+
+            function credit() {
+                var amount = parseInt(document.getElementById("number").value) || 0;
+                account_balance += amount;
+                document.getElementById("result").innerHTML = "Credited: " + amount + " PKR";
+                document.getElementById("balance").innerHTML = "Your account balance is: " + account_balance + " PKR";
+            }
+            function debit() {
+                var amount = parseInt(document.getElementById("number").value) || 0;
+                account_balance -= amount;
+                document.getElementById("result").innerHTML = "Debited: " + amount + " PKR";
+                document.getElementById("balance").innerHTML = "Your account balance is: " + account_balance + " PKR";
+            }
+        </script>
+    </body>
+</html>
